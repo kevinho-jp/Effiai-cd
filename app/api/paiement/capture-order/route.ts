@@ -1,7 +1,8 @@
 cat > app/api/paiement/capture-order/route.ts << 'EOF'
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
-const checkoutNodeJssdk = require('@paypal/checkout-server-sdk');
+// @ts-ignore
+import checkoutNodeJssdk from '@paypal/checkout-server-sdk';
 import { randomBytes } from "crypto"
 
 function environment() {
