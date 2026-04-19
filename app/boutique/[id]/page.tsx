@@ -3,18 +3,20 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import { use } from "react"
 
-export default function ProduitPage({ params }: { params: { id: string } }) {
+export default function ProduitPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
   const [produit, setProduit] = useState<any>(null)
   const [email, setEmail] = useState("")
   const [showPayPal, setShowPayPal] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    fetch(`/api/produits/${params.id}`)
+    fetch(`/api/produits/${id}`)
       .then(res => res.json())
       .then(data => setProduit(data))
-  }, [params.id])
+  }, [id])
 
   const initialOptions = {
     clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID!,
