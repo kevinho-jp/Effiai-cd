@@ -1,6 +1,7 @@
+cat > app/api/paiement/create-order/route.ts << 'EOF'
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
-import checkoutNodeJssdk from '@paypal/checkout-server-sdk'
+const checkoutNodeJssdk = require('@paypal/checkout-server-sdk');
 
 function environment() {
   const clientId = process.env.PAYPAL_CLIENT_ID!
@@ -62,3 +63,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Erreur création paiement" }, { status: 500 })
   }
 }
+EOF
