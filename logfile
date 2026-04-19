@@ -1,0 +1,45 @@
+2026-04-17 17:17:20.779 CAT [19421] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-04-17 17:17:20.781 CAT [19421] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-17 17:17:20.785 CAT [19421] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-04-17 17:17:20.893 CAT [19435] LOG:  database system was shut down at 2026-04-17 17:14:35 CAT
+2026-04-17 17:17:20.939 CAT [19421] LOG:  database system is ready to accept connections
+2026-04-17 17:22:21.046 CAT [19433] LOG:  checkpoint starting: time
+2026-04-17 17:39:49.460 CAT [19433] LOG:  checkpoint complete: wrote 983 buffers (6.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1046.122 s, sync=1.790 s, total=1048.417 s; sync files=318, longest=0.204 s, average=0.006 s; distance=4585 kB, estimate=4585 kB; lsn=0/1BDE0D8, redo lsn=0/1BDE048
+2026-04-17 18:18:10.726 CAT [10440] ERROR:  role "monuser" already exists
+2026-04-17 18:18:10.726 CAT [10440] STATEMENT:  CREATE ROLE monuser SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
+2026-04-17 18:18:10.864 CAT [10464] FATAL:  database "u0_a403" does not exist
+2026-04-17 18:18:42.806 CAT [11500] ERROR:  database "monecommerce" already exists
+2026-04-17 18:18:42.806 CAT [11500] STATEMENT:  CREATE DATABASE monecommerce OWNER monuser;
+2026-04-17 18:20:08.898 CAT [14045] FATAL:  database "u0_a403" does not exist
+2026-04-17 18:31:38.354 CAT [26915] FATAL:  lock file "postmaster.pid" already exists
+2026-04-17 18:31:38.354 CAT [26915] HINT:  Is another postmaster (PID 19421) running in data directory "/data/data/com.termux/files/home/.postgres"?
+2026-04-17 18:32:48.171 CAT [28889] FATAL:  lock file "postmaster.pid" already exists
+2026-04-17 18:32:48.171 CAT [28889] HINT:  Is another postmaster (PID 19421) running in data directory "/data/data/com.termux/files/home/.postgres"?
+2026-04-17 18:33:19.532 CAT [28964] ERROR:  role "monuser" already exists
+2026-04-17 18:33:19.532 CAT [28964] STATEMENT:  CREATE ROLE monuser SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
+2026-04-17 18:33:19.585 CAT [28966] FATAL:  database "u0_a403" does not exist
+2026-04-17 18:33:43.289 CAT [29039] ERROR:  database "monecommerce" already exists
+2026-04-17 18:33:43.289 CAT [29039] STATEMENT:  CREATE DATABASE monecommerce OWNER monuser;
+2026-04-17 21:03:51.450 CAT [19440] WARNING:  autovacuum worker took too long to start; canceled
+2026-04-17 21:03:51.474 CAT [26160] WARNING:  autovacuum worker started without a worker entry
+2026-04-18 17:24:28.594 CAT [16441] LOG:  starting PostgreSQL 18.2 on aarch64-unknown-linux-android, compiled by Android (13989888, +pgo, +bolt, +lto, +mlgo, based on r563880c) clang version 21.0.0 (https://android.googlesource.com/toolchain/llvm-project 5e96669f06077099aa41290cdb4c5e6fa0f59349), 64-bit
+2026-04-18 17:24:28.597 CAT [16441] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-04-18 17:24:28.600 CAT [16441] LOG:  listening on Unix socket "/data/data/com.termux/files/usr/tmp/.s.PGSQL.5432"
+2026-04-18 17:24:28.704 CAT [16449] LOG:  database system was interrupted; last known up at 2026-04-17 17:39:49 CAT
+2026-04-18 17:24:29.054 CAT [16449] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-04-18 17:24:29.062 CAT [16449] LOG:  redo starts at 0/1BDE048
+2026-04-18 17:24:29.062 CAT [16449] LOG:  invalid record length at 0/1BDE188: expected at least 24, got 0
+2026-04-18 17:24:29.062 CAT [16449] LOG:  redo done at 0/1BDE150 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2026-04-18 17:24:29.168 CAT [16447] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-04-18 17:24:29.190 CAT [16447] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.003 s, total=0.024 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, estimate=0 kB; lsn=0/1BDE188, redo lsn=0/1BDE188
+2026-04-18 17:24:29.262 CAT [16441] LOG:  database system is ready to accept connections
+2026-04-18 17:31:14.645 CAT [21394] ERROR:  role "monuser" cannot be dropped because some objects depend on it
+2026-04-18 17:31:14.645 CAT [21394] DETAIL:  owner of database monecommerce
+2026-04-18 17:31:14.645 CAT [21394] STATEMENT:  DROP ROLE monuser;
+2026-04-18 17:31:14.703 CAT [21400] ERROR:  role "monuser" already exists
+2026-04-18 17:31:14.703 CAT [21400] STATEMENT:  CREATE ROLE monuser SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN NOREPLICATION NOBYPASSRLS;
+2026-04-18 17:31:14.766 CAT [21402] FATAL:  database "u0_a403" does not exist
+2026-04-18 17:31:14.835 CAT [16447] LOG:  checkpoint starting: immediate force wait
+2026-04-18 17:31:14.868 CAT [16447] LOG:  checkpoint complete: wrote 2 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.001 s, total=0.034 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1 kB, estimate=1 kB; lsn=0/1BDE6F8, redo lsn=0/1BDE6A0
+2026-04-18 17:36:14.995 CAT [16447] LOG:  checkpoint starting: time
+2026-04-18 17:37:52.709 CAT [16447] LOG:  checkpoint complete: wrote 950 buffers (5.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=96.064 s, sync=1.318 s, total=97.737 s; sync files=305, longest=0.028 s, average=0.005 s; distance=4393 kB, estimate=4393 kB; lsn=0/2028F28, redo lsn=0/2028E98
