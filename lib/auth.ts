@@ -15,26 +15,14 @@ export const authOptions: NextAuthOptions = {
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null
-        
         if (credentials.email !== process.env.ADMIN_EMAIL) return null
-        
-        let admin = await prisma.admin.findUnique({
-          where: { email: credentials.email }
-        })
-        
+        let admin = await prisma.admin.findUnique({ where: { email: credentials.email } })
         if (!admin) {
           const hashedPassword = await bcrypt.hash(credentials.password, 10)
-          admin = await prisma.admin.create({
-            data: {
-              email: credentials.email,
-              password: hashedPassword
-            }
-          })
+          admin = await prisma.admin.create({ data: { email: credentials.email, password: hashedPassword } })
         }
-        
         const isValid = await bcrypt.compare(credentials.password, admin.password || '')
         if (!isValid) return null
-        
         return { id: admin.id, email: admin.email }
       }
     })
