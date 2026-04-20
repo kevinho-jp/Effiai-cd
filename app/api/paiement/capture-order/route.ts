@@ -1,4 +1,3 @@
-cat > app/api/paiement/capture-order/route.ts << 'EOF'
 import { NextResponse } from "next/server"
 import { prisma } from "@/lib/prisma"
 // @ts-ignore
@@ -55,4 +54,3 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Erreur capture" }, { status: 500 })
   }
 }
-EOF
