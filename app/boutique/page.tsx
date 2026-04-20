@@ -32,9 +32,3 @@ export default async function BoutiquePage() {
     </main>
   )
 }
-
-
-
-
-e
-
