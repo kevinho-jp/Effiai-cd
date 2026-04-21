@@ -1,3 +1,4 @@
+cat > app/boutique/page.tsx << 'EOF'
 import { prisma } from "@/lib/prisma"
 import Link from "next/link"
 
@@ -32,3 +33,4 @@ export default async function BoutiquePage() {
     </main>
   )
 }
+EOF
